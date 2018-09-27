@@ -11,10 +11,21 @@
   max-width: 90%;
   max-height: 90%;
 }
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
 div {
   background-color: #62C4FF;
 }
 </style>
+  <center><img src="abuse.jpg" class="modal" id="myModal"></center>
 <center><img src="Comic.jpg" id="comic"></center>
 <div>
 <center><img src="PG1.png" class="pg"></center>
@@ -25,11 +36,16 @@ div {
 
 <center><img src="meme_export.png" id="comic"></center>
 <script>
+  var modal = document.getElementById('myModal');
+  modal.onclick = function() {
+    modal.style.display = "none";
+    myAudio.play();
+  }
   var myAudio = new Audio('bby.mp3');
   myAudio.addEventListener('ended', function() {
     this.currentTime = 0;
     this.play();
   }, false);
-  myAudio.play()
+  
 </script>
 </html>
