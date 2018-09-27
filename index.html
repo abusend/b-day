@@ -30,7 +30,7 @@ div {
 </style>
   <center><img src="abuse.jpg" class="modal" id="myModal"></center>
 <center><img src="Comic.jpg" class="comic"></center>
-<div>
+<div id="bg-blu">
 <center><img src="PG1.png" class="pg"></center>
 <center><img src="PG2.png" class="pg"></center>
 </div>
@@ -40,13 +40,15 @@ div {
 <center><img src="meme_export.png" class="comic"></center>
 <script>
   var modal = document.getElementById('myModal');
+  var div = document.getElementById('bg-blu');
   var pg = document.getElementsByClassName('pg');
   var comic = document.getElementsByClassName('comic');
   modal.onclick = function() {
-    for(var i=0; i<pg.length; i++){pg[i].style.display="";}
-    for(var i=0; i<comic.length; i++){comic[i].style.display="";}
+    for(var i=0; i<pg.length; i++){pg[i].style.display="initial";}
+    for(var i=0; i<comic.length; i++){comic[i].style.display="initial";}
     myAudio.play();
-  modal.style.display = "none";
+    modal.style.display = "none";
+    div.style.display = "initial";
   }
   var myAudio = new Audio('bby.mp3');
   myAudio.addEventListener('ended', function() {
