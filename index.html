@@ -1,6 +1,7 @@
 <html>
 <style>
-#comic {
+.comic {
+  display: none;
   max-width: 50%;
   max-height: 100%;
   height: auto;
@@ -8,6 +9,7 @@
 }
 
 .pg {
+  display: none;
   max-width: 90%;
   max-height: 90%;
 }
@@ -22,11 +24,12 @@
 }
 
 div {
+  display: none;
   background-color: #62C4FF;
 }
 </style>
   <center><img src="abuse.jpg" class="modal" id="myModal"></center>
-<center><img src="Comic.jpg" id="comic"></center>
+<center><img src="Comic.jpg" class=comic"></center>
 <div>
 <center><img src="PG1.png" class="pg"></center>
 <center><img src="PG2.png" class="pg"></center>
@@ -34,12 +37,16 @@ div {
 <center><img src="PG3.png" class="pg"></center>
 <center><img src="PG4.png" class="pg"></center>
 
-<center><img src="meme_export.png" id="comic"></center>
+<center><img src="meme_export.png" class="comic"></center>
 <script>
   var modal = document.getElementById('myModal');
+  var pg = document.getElementsByClassName('pg');
+  var comic = document.getElementsByClassName('comic');
   modal.onclick = function() {
-    modal.style.display = "none";
+    for(var i=0; i<pg.length; i++){pg[i].style.display="";}
+    for(var i=0; i<comic.length; i++){comic[i].style.display="";}
     myAudio.play();
+  modal.style.display = "none";
   }
   var myAudio = new Audio('bby.mp3');
   myAudio.addEventListener('ended', function() {
